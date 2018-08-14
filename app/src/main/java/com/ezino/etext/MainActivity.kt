@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
     override fun onClick(v: View?) {
         cameraView.captureImage { cameraKitImage ->
             val image = FirebaseVisionImage.fromBitmap(cameraKitImage.bitmap)
