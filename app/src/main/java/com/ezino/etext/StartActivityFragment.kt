@@ -26,6 +26,7 @@ class StartActivityFragment : Fragment() {
         viewModel.data.observe(this, Observer { msg -> textView.text = msg })
 
         fab.setOnClickListener {
+            viewModel.cameraButtonClicked()
             cameraView.captureImage { cameraKitImage -> viewModel.recognizeText(cameraKitImage) }
         }
     }

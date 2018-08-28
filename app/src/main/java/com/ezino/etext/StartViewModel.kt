@@ -22,13 +22,20 @@ class StartViewModel : ViewModel() {
         val textRecognizer = FirebaseVision.getInstance().onDeviceTextRecognizer
         textRecognizer.processImage(image)
                 .addOnSuccessListener {
-                    // Task completed successfully
-                    // ...
-                    val resultText = it.text
+                    _data.value = it.text
+                    // TODO hide progress
+                    // TODO show result
                 }
                 .addOnFailureListener {
                     // Task failed with an exception
                     // ...
+                    // TODO hide progress
+                    // TODO show error message
                 }
+    }
+
+    fun cameraButtonClicked() {
+        // TODO show progress
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
